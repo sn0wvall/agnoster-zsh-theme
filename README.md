@@ -1,4 +1,10 @@
-# agnoster.zsh-theme
+# agnoster.zsh-theme - sn0wvall fork
+
+# What have I Changed?
+
+- More neutral colour scheme
+- Git status is now red or green to allow for more clear understanding
+
 
 A ZSH theme optimized for people who use:
 
