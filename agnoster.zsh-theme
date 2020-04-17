@@ -95,12 +95,18 @@ prompt_git() {
   is_dirty() {
     test -n "$(git status --porcelain --ignore-submodules)"
   }
+	is_ahead() {
+		test -n "$(git status | grep "Your branch" | grep 'ahead')"
+	}
   ref="$vcs_info_msg_0_"
   if [[ -n "$ref" ]]; then
     if is_dirty; then
       color=red
-      ref="${ref} $PLUSMINUS"
-    else
+			ref="${ref} $PLUSMINUS"
+		elif is_ahead; then
+			color=blue
+			ref="${ref} "
+		else
       color=green
       ref="${ref} "
     fi
